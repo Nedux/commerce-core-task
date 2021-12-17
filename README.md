@@ -1,5 +1,5 @@
-# CommerceCore Junior Developer positions task
-## VUE JS V3
+### CommerceCore task (for junior position)
+### VUE-JS V3
 
 
 ## Project setup
