@@ -1,0 +1,38 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imgId": 1,
+      "name": "CoreProduct",
+      "price": 49.99,
+      "quantaty": 4
+    },
+    {
+      "id": 2,
+      "imgId": 1,
+      "name": "CoreProduct",
+      "price": 69.99,
+      "quantaty": 3
+    },
+    {
+      "id": 3,
+      "imgId": 1,
+      "name": "CoreProduct",
+      "price": 29.99,
+      "quantaty": 3
+    }
+  ],
+  "userInfo": {
+    "name": "Nedas",
+    "lastName": "Gulbickas",
+    "email": "nedasgulb@gmail.com",
+    "address": "Narimanto g. 20",
+    "city": "Žiežmariai",
+    "country": 2,
+    "region": 3,
+    "postalCode": "56238",
+    "cardNumber": "1265 5",
+    "mmyy": "10/25",
+    "cvv": "100"
+  }
+}

@@ -33,11 +33,7 @@
           </div>
         </div>
         <div class="save-button">
-          <button
-            data-bs-target="#collapseTarget"
-            data-bs-toggle="collapse"
-            @click="saveClicked()"
-          >
+          <button data-bs-target="#collapseTarget" data-bs-toggle="collapse">
             <span class="bold">SAVE CHANGES</span>
           </button>
         </div>
@@ -57,11 +53,10 @@ export default {
     return {};
   },
   methods: {
-    saveClicked() {
-      console.log("Clicked");
-    },
     getImg(name) {
-      return require("@/assets/images/" + name + ".png");
+      if (name) {
+        return require("@/assets/images/" + name + ".png");
+      }
     },
   },
 };
@@ -69,14 +64,15 @@ export default {
 
 <style lang="scss" scoped>
 .variants {
-  margin: 0 11% 0 14%;
+  margin: 0 11% 0 11%;
   font-size: 14px;
   line-height: 24px;
   p {
     font-size: 12px;
     font-weight: 700;
+    line-height: 18px;
     letter-spacing: 0.07em;
-    margin: 0 0 16px;
+    margin: 2px 0 0 0;
   }
 
   .wrapper {
@@ -145,20 +141,22 @@ export default {
       display: flex;
       justify-content: end;
       button {
-        color: white;
         background-color: #dc624e;
         width: 246px;
         height: 48px;
         border: 1px solid black;
         box-sizing: border-box;
-        letter-spacing: 0.07em;
         box-shadow: 0px 4px 10px rgba(67, 40, 16, 0.24);
         border-radius: 3px;
         opacity: 100%;
         transition: opacity 0.25s;
-      }
-      button:hover {
-        opacity: 87%;
+        &:hover {
+          opacity: 87%;
+        }
+        span {
+          letter-spacing: 0.07em;
+          color: white;
+        }
       }
     }
   }
@@ -169,7 +167,7 @@ export default {
   }
 }
 @media (max-width: 575.98px) {
-  .wrapper {
+  .variants .wrapper {
     padding: 15px 24px 0;
     margin: auto;
   }
@@ -181,7 +179,6 @@ export default {
   }
   .variants .wrapper .save-button {
     justify-content: center;
-
     padding: 24px 0 15px;
   }
 }
@@ -189,7 +186,6 @@ export default {
   .variants .wrapper .btn {
     flex-direction: column;
     .toggle {
-      margin-top: 8px;
       justify-content: center;
     }
   }

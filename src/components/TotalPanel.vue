@@ -40,7 +40,9 @@ export default {
   },
   methods: {
     getImg(name) {
-      return require("@/assets/images/" + name + ".png");
+      if (name) {
+        return require("@/assets/images/" + name + ".png");
+      }
     },
   },
 };
