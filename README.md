@@ -1,4 +1,4 @@
-### CommerceCore task (for junior position)
+### CommerceCore task (for junior front-end position)
 ### VUE-JS V3
 
 
