@@ -1,4 +1,4 @@
-# commerce-core-task
+# CommerceCore Junior Developer positions task
 ## VUE JS V3
 
 
@@ -12,7 +12,7 @@ npm install
 npm run json-server
 ```
 
-### Compiles and hot-reloads for development
+### Starting Vue Application
 ```
 npm run serve
 ```
