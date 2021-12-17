@@ -1,8 +1,15 @@
 # commerce-core-task
+## VUE JS V3
+
 
 ## Project setup
 ```
 npm install
+```
+
+### Starting the API
+```
+npm run json-server
 ```
 
 ### Compiles and hot-reloads for development
@@ -10,10 +17,3 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
