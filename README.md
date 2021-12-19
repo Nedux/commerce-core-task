@@ -1,5 +1,5 @@
 ### CommerceCore task (for junior front-end position)
-### Approximate stack: Vue V3, json-server, SCSS, Bootstrap (wasn't necessary),
+ Approximate stack: Vue V3, json-server, SCSS, Bootstrap (wasn't necessary),
  
 ## About
 My first priority is always new experience and knowledge, therefore I choose to get out of my comfort zone and tried to execute the task in framework I am not familiar with at all.
