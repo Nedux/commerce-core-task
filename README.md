@@ -5,7 +5,7 @@
 My first priority is always new experience and knowledge, therefore I choose to get out of my comfort zone and tried to execute the task in framework I am not familiar with at all.
 
 ## Ways to improve and self-reflection
- * Figma design was a bit inconsistent (opened and closed variant parts in the design had different paddings), when everybody had access to edit design was tampered.
+ * Figma design was a bit inconsistent (opened and closed variant parts in the design had different paddings). Also when everybody had right to edit, design was tampered.
  * Fonts are off because I do not really know how to use same font as in Figma. (My attempt was to export .ttf file from figma).
  * I need a bit more beforehand planning and better time tracking habits.
  * My code probably will be lacking best practices and unwritten rules of VUE (since YouTube was my teacher). 
