@@ -8,7 +8,7 @@ My first priority is always new experience and knowledge, therefore I choose to 
 my comfort zone and tried to exeute task in framework I am not familiar with at all.
 ```
 ## Ways to improve and self-reflection
-```
+
 *Figma design was a bit inconsistent (opened and closed variant parts in the design has different paddings),
 moreover when everybody had access to edit design was changed.
 The code probably will be lacking best practices and unwritten rules of VUE (since YouTube was my teacher). 
@@ -21,7 +21,7 @@ but I choose this path because it was a good place to familiarize with the frame
 2. Error messages when closed/opened pushes other form components down (it is not aesthetically pleasing).
 
   
-```
+
 ## Project setup
 ```
 npm install
