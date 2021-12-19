@@ -9,7 +9,7 @@ my comfort zone and tried to exeute task in framework I am not familiar with at 
 ```
 ## Ways to improve and self-reflection
 ```
--Figma design was a bit inconsistent (opened and closed variant parts in the design has different paddings),
+*Figma design was a bit inconsistent (opened and closed variant parts in the design has different paddings),
 moreover when everybody had access to edit design was changed.
 The code probably will be lacking best practices and unwritten rules of VUE (since YouTube was my teacher). 
 I am pretty sure that splitting the whole page in more individual components 
