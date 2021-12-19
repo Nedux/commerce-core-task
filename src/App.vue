@@ -1,18 +1,22 @@
 <template>
   <div class="wrap">
     <div class="left">
-      <Variants :products="products" :productsTitle="productsTitle" />
-      <div class="mobile">
-        <TotalPanel :productsTitle="productsTitle" />
+      <div class="left-wrap">
+        <Variants :products="products" :productsTitle="productsTitle" />
+        <div class="mobile">
+          <TotalPanel :productsTitle="productsTitle" />
+        </div>
+        <Form
+          @form-submited="formSumbmited"
+          :regions="regions"
+          :countries="countries"
+        />
       </div>
-      <Form
-        @form-submited="formSumbmited"
-        :regions="regions"
-        :countries="countries"
-      />
     </div>
     <div class="right">
-      <TotalPanel :productsTitle="productsTitle" />
+      <div class="right-wrap">
+        <TotalPanel :productsTitle="productsTitle" />
+      </div>
     </div>
   </div>
 </template>
@@ -36,6 +40,7 @@ export default {
     return {
       products: [],
       productsTitle: {},
+      // For form dropdowns
       regions: [
         {
           name: "Mock Region1",
@@ -75,6 +80,7 @@ export default {
     };
   },
   methods: {
+    // Post Form data
     async formSumbmited(formData) {
       console.log(JSON.stringify(formData));
       const response = await fetch("api/userInfo", {
@@ -86,12 +92,14 @@ export default {
       });
       // Error checks needed
     },
+    // GET products
     async fetchProducts() {
       const response = await fetch("api/products");
       const data = await response.json();
       return data;
       // Error checks needed
     },
+    // Not sure how exactly it should work so it is my interpretation
     createTite(products) {
       let price = 0;
       let quantaty = 0;
@@ -100,8 +108,8 @@ export default {
         price += product.price;
       });
       return {
-        img: "products",
-        title: "CoreProduct",
+        img: "products", // Could be changed
+        title: "CoreProduct", // Could be changed
         quantaty: quantaty,
         price: price,
       };
@@ -138,6 +146,10 @@ body {
       background-color: #f8f1eb;
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
+      .left-wrap {
+        margin: 0 10.44% 0 14.2%;
+      }
       .mobile {
         display: none;
       }
@@ -149,6 +161,24 @@ body {
       display: flex;
       flex-direction: column;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      .right-wrap {
+        margin: 0 20.5% 0 16%;
+      }
+    }
+  }
+}
+// For larger screens
+@media (min-width: 1441px) {
+  body .wrap {
+    .left {
+      .left-wrap {
+        margin: 0 89px 0 121px;
+      }
+    }
+    .right {
+      .right-wrap {
+        margin: 0 120px 0 94px;
+      }
     }
   }
 }
@@ -161,7 +191,10 @@ body {
 
       .left {
         padding: 30px 30px;
-
+        align-items: center;
+        .left-wrap {
+          margin: 0;
+        }
         .mobile {
           margin: 32px 0;
           display: flex;

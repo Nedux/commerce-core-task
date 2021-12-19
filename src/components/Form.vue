@@ -9,6 +9,7 @@
         </div>
         <div class="inputs">
           <div class="name">
+            <!-- @input is needed because of information autofill and use of tabs -->
             <input
               :class="`form-control ${errors.name.visible ? 'active' : ''}`"
               type="Text"
@@ -16,6 +17,7 @@
               v-model="userInfo.name"
               :maxlength="maxOther"
               @click="removeError('name')"
+              @input="removeError('name')"
             />
             <p :class="`error ${errors.name.visible ? 'active' : ''}`">
               {{ errors.name.errormsg }}
@@ -30,6 +32,7 @@
               v-model="userInfo.lastName"
               :maxlength="maxOther"
               @click="removeError('lastName')"
+              @input="removeError('lastName')"
             />
             <p :class="`error ${errors.lastName.visible ? 'active' : ''}`">
               {{ errors.lastName.errormsg }}
@@ -46,6 +49,7 @@
               v-model="userInfo.email"
               :maxlength="maxOther"
               @click="removeError('email')"
+              @input="removeError('email')"
             />
             <p :class="`error ${errors.email.visible ? 'active' : ''}`">
               {{ errors.email.errormsg }}
@@ -64,6 +68,7 @@
               v-model="userInfo.address"
               :maxlength="maxOther"
               @click="removeError('address')"
+              @input="removeError('address')"
             />
             <p :class="`error ${errors.address.visible ? 'active' : ''}`">
               {{ errors.address.errormsg }}
@@ -78,6 +83,7 @@
               v-model="userInfo.city"
               :maxlength="maxOther"
               @click="removeError('city')"
+              @input="removeError('city')"
             />
             <p :class="`error ${errors.city.visible ? 'active' : ''}`">
               {{ errors.city.errormsg }}
@@ -95,6 +101,7 @@
               v-model="userInfo.country"
               :maxlength="maxOther"
               @click="removeError('country')"
+              @input="removeError('country')"
             >
               <option class="default" selected disabled value="">Select</option>
 
@@ -122,6 +129,7 @@
               id="floatingSelect"
               v-model="userInfo.region"
               @click="removeError('region')"
+              @input="removeError('region')"
             >
               <option class="default" selected disabled value="">Select</option>
 
@@ -148,6 +156,7 @@
               v-model="userInfo.postalCode"
               :maxlength="maxPostal"
               @click="removeError('postalCode')"
+              @input="removeError('postalCode')"
             />
             <p :class="`error ${errors.postalCode.visible ? 'active' : ''}`">
               {{ errors.postalCode.errormsg }}
@@ -180,7 +189,10 @@
                 placeholder="Card Number"
                 v-model="userInfo.cardNumber"
                 @click="removeError('cardNumber')"
-                @input="formatCredit($event)"
+                @input="
+                  formatCredit($event);
+                  removeError('cardNumber');
+                "
               />
               <p :class="`error ${errors.cardNumber.visible ? 'active' : ''}`">
                 {{ errors.cardNumber.errormsg }}
@@ -194,7 +206,10 @@
                 v-model="userInfo.mmyy"
                 :maxlength="maxLengthExpiration"
                 @click="removeError('mmyy')"
-                @input="onlyNumberAndSlash('mmyy')"
+                @input="
+                  onlyNumberAndSlash('mmyy');
+                  removeError('mmyy');
+                "
               />
               <p :class="`error ${errors.mmyy.visible ? 'active' : ''}`">
                 {{ errors.mmyy.errormsg }}
@@ -213,7 +228,10 @@
                     'url(' + require('@/assets/' + imageInfo) + ')',
                 }"
                 @click="removeError('cvv')"
-                @input="onlyNumbers('cvv')"
+                @input="
+                  onlyNumbers('cvv');
+                  removeError('cvv');
+                "
               />
               <p :class="`error ${errors.cvv.visible ? 'active' : ''}`">
                 {{ errors.cvv.errormsg }}
@@ -245,7 +263,6 @@ export default {
   },
   data() {
     return {
-      spaceInd: false,
       maxLengthCvv: 3,
       maxLengthExpiration: 5,
       maxOther: 45,
@@ -253,6 +270,7 @@ export default {
       maxCredit: 24,
       imageArrow: "images/form-arrow.svg",
       imageInfo: "images/info.svg",
+
       userInfo: {
         name: "",
         lastName: "",
@@ -266,6 +284,7 @@ export default {
         mmyy: "",
         cvv: "",
       },
+
       errors: {
         name: {
           visible: false,
@@ -315,6 +334,7 @@ export default {
     };
   },
   methods: {
+    // Groups numbers by 4 digits
     formatCredit(event) {
       // If not backspace
       if (event.data) {
@@ -325,14 +345,14 @@ export default {
         let lastChar = this.userInfo.cardNumber.slice(-1);
         let temp = this.userInfo.cardNumber.slice(0, -1);
         let spacesCount = (temp.match(/ /g) || []).length;
-        // For checking if space is required before
+        // For checking if space is required (when something is deleted)
         if (
           event.data != " " &&
           temp &&
           temp.length % 4 == spacesCount &&
           lastChar != " "
         ) {
-          var lastChar2 = temp.slice(-1);
+          let lastChar2 = temp.slice(-1);
           if (lastChar2 != " ") {
             this.userInfo.cardNumber = temp + " " + lastChar;
           }
@@ -426,7 +446,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .form {
-  margin: 32px 11% 0 11%;
+  margin: 32px 0;
+  max-width: 640px;
   .error {
     margin: 0;
     color: #ff0033;

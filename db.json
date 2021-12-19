@@ -22,17 +22,20 @@
       "quantaty": 3
     }
   ],
-  "userInfo": {
-    "name": "Nedas",
-    "lastName": "Gulbickas",
-    "email": "nedasgulb@gmail.com",
-    "address": "Narimanto g. 20",
-    "city": "Žiežmariai",
-    "country": 2,
-    "region": 3,
-    "postalCode": "56238",
-    "cardNumber": "1265 5",
-    "mmyy": "10/25",
-    "cvv": "100"
-  }
+  "userInfo": [
+    {
+      "id": 0,
+      "name": "Nice One",
+      "lastName": "Nice One",
+      "email": "asf@gmail.com",
+      "address": "asfasf",
+      "city": "Žiasfasfežmariaiasfasf",
+      "country": 4,
+      "region": 1,
+      "postalCode": "58888",
+      "cardNumber": "3213 1232 1321 3213 2321",
+      "mmyy": "11/55",
+      "cvv": "100"
+    }
+  ]
 }

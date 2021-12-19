@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   max-width: 374px;
-  margin: 0 16% 0 20.4%;
+
   background-color: white;
   .products-title {
     margin-bottom: 27px;
@@ -112,6 +112,11 @@ export default {
       font-size: 14px;
       line-height: 140%;
     }
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper .products-title .price {
+    display: none;
   }
 }
 @media (max-width: 768px) {

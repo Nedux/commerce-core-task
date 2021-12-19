@@ -64,9 +64,10 @@ export default {
 
 <style lang="scss" scoped>
 .variants {
-  margin: 0 11% 0 11%;
+  margin: 0;
   font-size: 14px;
   line-height: 24px;
+  max-width: 640px;
   p {
     font-size: 12px;
     font-weight: 700;
@@ -139,7 +140,7 @@ export default {
     .save-button {
       padding: 23px 24px 24px 24px;
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       button {
         background-color: #dc624e;
         width: 246px;
