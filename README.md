@@ -12,7 +12,8 @@ my comfort zone and tried to exeute task in framework I am not familiar with at 
 Figma design was a bit inconsistent (opened and closed variant parts in the design has different paddings),
 moreover when everybody had access to edit design was changed.
 The code probably will be lacking best practices and unwritten rules of VUE (since YouTube was my teacher). 
-I am pretty sure that splitting the whole page in more individual components would have been better (for later repurposing and easier management).
+I am pretty sure that splitting the whole page in more individual components 
+would have been better (for later repurposing and easier management).
 Fonts are off because I was unable to export .ttf from figma. 
 It was definitely not necessary to reinvent the wheel and make form validation by hand (better to use libraries like Vuelidate),
 but I choose this path because it was a good place to familiarize with the framework's capabilities. But with that, problems occurred: 
