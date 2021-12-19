@@ -3,10 +3,8 @@
 
 
 ## About
-```
-My first priority is always new experience and knowledge, therefore I choose to get out of
-my comfort zone and tried to exeute task in framework I am not familiar with at all.
-```
+My first priority is always new experience and knowledge, therefore I choose to get out of my comfort zone and tried to exeute task in framework I am not familiar with at all.
+
 ## Ways to improve and self-reflection
 
 *Figma design was a bit inconsistent (opened and closed variant parts in the design has different paddings),
